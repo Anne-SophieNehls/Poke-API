@@ -1,9 +1,12 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "./Header";
+import { useThemeContext } from "../lib/ToggleLightDarkMode";
 
 export default function Layout() {
+  const { theme } = useThemeContext();
+
   return (
-    <div>
+    <div className={`theme theme--${theme}`}>
       <Header />
       <Outlet />
     </div>

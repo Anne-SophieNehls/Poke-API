@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import DetailPage from "./pages/DetailPage";
 import TypePage from "./pages/TypePage";
 import AboutUsPage from "./pages/AboutUsPage";
+import { ThemeContextProvider } from "./lib/ToggleLightDarkMode";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeContextProvider>
+      <RouterProvider router={router} />
+    </ThemeContextProvider>
+  );
 }
 
 export default App;

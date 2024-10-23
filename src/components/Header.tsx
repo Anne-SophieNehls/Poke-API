@@ -1,10 +1,9 @@
 import { useRef } from "react";
 import { NavLink } from "react-router-dom";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Header() {
   const searchRef = useRef<HTMLInputElement>(null);
-
-  function ToggelDarkMode() {}
 
   return (
     <header>
@@ -20,7 +19,7 @@ export default function Header() {
         <form>
           <input type="text" placeholder="Search Pokemon" ref={searchRef} />
         </form>
-        <button onClick={ToggelDarkMode}>Light-Dark-Mode</button>
+        <ThemeSwitcher />
       </div>
     </header>
   );

@@ -41,7 +41,7 @@ export default function AboutUsPage() {
         <a href="https://github.com/Anne-SophieNehls">
           <b>Github</b>
         </a>
-        <a href="">
+        <a href="https://www.linkedin.com/in/anne-sophie-nehls-89ba671b7/">
           <b>LinkedIn</b>
         </a>
       </article>
