@@ -1,34 +1,52 @@
-import { useState } from "react"
-
-const PokemonTypes = () => {
-    const [typeList, setTypeList] = useState<string[]>([])
-
-    const type = [
-        'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'flying', 'ghost', 'grass', 'ground', 'ice', 'normal', 'plant', 'poison', 'psychic', 'rock', 'steel', 'water'
-    ]
+import { useState } from "react";
 
 
-    // interface pokemondata???
 
+// interface pokemandata????
+
+
+const TypePage = () => {
     const [data, setData] = useState<PokemonData | null>(null);
     const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        fetch(`https://pokeapi.co/api/v2/type/${type}`)
-          .then((response) => response.json())
-          .then((json) => {
-            setData(json);
-          }).catch((e)=>{
-            setError(e)
-          });
-      }, [type]);
-    
-      if(error){
-        return "Sorry, kaputt"
-      }
-    
-      if(!data) {
-        return "Loading..."
-      }[type]
+    const types = [
+        'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 
+        'flying', 'ghost', 'grass', 'ground', 'ice', 'normal', 'plant', 
+        'poison', 'psychic', 'rock', 'steel', 'water'
+    ];
 
-}
+    const chooseByType = (type: string) => {
+        fetch(`https://pokeapi.co/api/v2/type/${type}`)
+            .then((response) => response.json())
+            .then((json) => {
+                setData(json);
+            })
+            .catch((e) => {
+                setError(e.message);
+            });
+    };
+
+    if (error) {
+        return <div>Error, reload the website</div>;
+    }
+
+    if (!data) {
+        return <div>Loading...</div>;
+    }
+
+    return (
+        <div>
+            <h1>Choose your Pokémon Type!</h1>
+            <div>
+                {types.map((type) => (
+                    <button key={type} onClick={() => chooseByType(type)}>
+                        {type}
+                    </button>
+                ))}
+            </div>
+        
+        </div>
+    );
+};
+
+export default TypePage;
