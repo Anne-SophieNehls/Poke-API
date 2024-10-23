@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 
-
-// interface pokemandata????
-
+interface PokemonData {
+    name: string;
+  }
 
 const TypePage = () => {
     const [data, setData] = useState<PokemonData | null>(null);
