@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { getPokemonById } from "../lib/api";
+import { getPokemonDetails } from "../lib/api";
 import PlaySound from "../components/PlaySound";
 
 interface PokemonData {
@@ -16,7 +16,7 @@ export default function DetailPage() {
   const pokemonQuery = useQuery<PokemonData>({
     queryKey: ["pokemon", id],
 
-    queryFn: () => getPokemonById(id!),
+    queryFn: () => getPokemonDetails(id!),
   });
 
   if (pokemonQuery.isError) {

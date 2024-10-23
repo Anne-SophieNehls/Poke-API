@@ -4,20 +4,12 @@ export default function AboutUsPage() {
       <h2>About us</h2>
       <p>
         Wir haben vom Mai bis Nowember 2024 den "Full Stack Web-Developer" Kurs
-        von Supercode besucht und dort erlernt, webseiten zu entwickeln. Hier
-        ist under Gemeinsames Projekt entstanden.
-        <br />
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus,
-        laborum maxime rerum ut, exercitationem cupiditate placeat enim error
-        veritatis eos sunt necessitatibus a molestiae delectus amet at iure
-        adipisci esse labore, distinctio ex molestias explicabo ea? Minus
-        voluptates reiciendis hic consequuntur explicabo, tempora sit! Quidem
-        eaque porro quas natus!
+        von Supercode besucht und dort erlernt, Webseiten zu entwickeln. Gemeinsam haben wir eine Pokemon Such-Seite entwickelt.
+       
       </p>
       <hr />
       <article className="Personen">
         <h3>Kami</h3>
-        <p>Stell dich vor</p>
         <h4>Kontakt:</h4>
         <a href="https://github.com/kami-shari">
           <b>Github</b>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { getPokemonDetails } from "../lib/api";
 
 interface PokemonData {
     name: string;
@@ -15,24 +15,28 @@ const TypePage = () => {
         'poison', 'psychic', 'rock', 'steel', 'water'
     ];
 
-    const chooseByType = (type: string) => {
-        fetch(`https://pokeapi.co/api/v2/type/${type}`)
-            .then((response) => response.json())
-            .then((json) => {
-                setData(json);
-            })
-            .catch((e) => {
-                setError(e.message);
-            });
-    };
 
-    if (error) {
-        return <div>Error, reload the website</div>;
-    }
+    const chooseByType = async (type: string) =>  {
+       const pokemonUrl = `https://pokeapi.co/api/v2/type/${type}`
+       const response = await fetch(pokemonUrl);
+       const json = (await response.json()) 
+       console.log(json.pokemon);
+       const pokemonArray = await Promise.all(json.pokemon.map( (pokemonItem) => {
+       
+       return getPokemonDetails(pokemonItem.pokemon.name)
+       } ))
+       console.log(pokemonArray);
+       return json
+     } 
+    
 
-    if (!data) {
-        return <div>Loading...</div>;
-    }
+    // if (error) {
+    //     return <div>Error, reload the website</div>;
+    // }
+
+    // if (!data) {
+    //     return <div>Loading...</div>;
+    // }
 
     return (
         <div>
@@ -44,9 +48,19 @@ const TypePage = () => {
                     </button>
                 ))}
             </div>
-        
+            <div className="pokeCard">
+                <div>
+                    <img src="" alt="pokemon-picture" />
+                    <div className="backgroud"></div>
+                </div>
+                <div className="info">
+                    {/* <p>{json.id}</p> */}
+                    <p>pokemon name</p>
+                </div>
+            </div>
         </div>
+
     );
-};
+}
 
 export default TypePage;
