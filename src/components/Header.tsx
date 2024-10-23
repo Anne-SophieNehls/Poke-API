@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header>
       <div>
-        <img src="" alt="Logo-Pokemon" />
+        <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Logo-Pokemon" />
       </div>
       <div>
         <nav>
@@ -17,7 +17,7 @@ export default function Header() {
           <NavLink to="/about-us">About us</NavLink>
         </nav>
         <form>
-          <input type="text" placeholder="search Pokemon" ref={searchRef} />
+          <input type="text" placeholder="Search Pokemon" ref={searchRef} />
         </form>
         <ThemeSwitcher />
       </div>

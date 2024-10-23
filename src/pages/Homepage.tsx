@@ -24,6 +24,7 @@ const PokemonCard = ({ id }: { id: number }) => (
 // Erst dann koennen wir mappen.
 
 const emptyPokemonArray = Array(151).fill(1);
+// const emptyPokemonArray = await Promise.all((151).fill(1).map(()=>(/* hier fetchen */)));
 
 const Homepage = () => (
   <div>
