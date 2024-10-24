@@ -1,9 +1,0 @@
-
-.theme{
-    height: 100%;
-  }
-  
-  .theme--dark{
-    background-color: var(--color-background-dark);
-    color: white;
-  }
