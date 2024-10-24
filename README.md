@@ -2,7 +2,7 @@
     <h2 style="color: white; margin: 0;">Welcome to Your New Pokémon World!</h2>
 </div>
 <div style="text-align: center;">
-    <img src="../public/pokeapi-logo.png" alt="PokeAPI Logo" width="300" />
+    <img src="./public/pokeapi-logo.png" alt="PokeAPI Logo" width="300" />
 </div>
 
 <div style="background-color: blue; height: 50px; text-align: center;">
@@ -55,9 +55,9 @@ The Pokémon app uses the following technologies:
 - **React**
 - **HTML & CSS**
 <div style="text-align: center;">
-    <img src="../public/typescript-logo.jpg" alt="Typescript Logo" width="150" />
-    <img src="../public/react-logo.png" alt="React Logo" width="150" />
-     <img src="../public/html-css-logo.png" alt="HTML & CSS Logo" width="150" />
+    <img src="./public/typescript-logo.jpg" alt="Typescript Logo" width="150" />
+    <img src="./public/react-logo.png" alt="React Logo" width="150" />
+     <img src="./public/html-css-logo.png" alt="HTML & CSS Logo" width="150" />
 </div>
 ---
 
