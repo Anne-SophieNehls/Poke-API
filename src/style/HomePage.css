@@ -1,1 +1,50 @@
-/* #######   Allgemeine Home   ####### */
+/* #######   Grid Home   ####### */
+
+.home-output{
+    display: grid;
+    grid-template-columns: repeat(4, 23svw);
+    gap: 3svw;
+}
+
+@media only screen and (max-width: 1024px) { 
+    .home-output{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) { 
+    .home-output{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* #######    card   ####### */
+
+.pokeCard{
+    width: 100%;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.pokemon-picture{
+    width: 100%;
+    object-fit: contain; 
+}
+
+.background{
+    background-color: #ffcb03;
+    height: 60%;
+    border-radius: 15px 15px 0px 0px;   
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+
+ background-color: white;
+ padding: 10px;
+ padding-left: 20px;
+ border-radius: 0px 0px 15px 15px;
+}

@@ -63,7 +63,8 @@
 
 /* #######   Allgemeine Styles   ####### */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter';
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -83,7 +84,7 @@ html, body, #root{
 
 .theme{
  background-color: var(--color-BG-light);
-  padding: 2rem;
+  padding: 1rem;
   min-height: 100%;
 }
 .theme.theme--dark{
