@@ -19,4 +19,3 @@ export default function PlaySound({ audioURL }: { audioURL: string }) {
     </div>
   );
 }
-
