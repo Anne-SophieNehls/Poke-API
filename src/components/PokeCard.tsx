@@ -9,6 +9,7 @@ export default function PokeCard(props: { pokemon: Pokemon }) {
           <img
             src={props.pokemon.sprites.other?.home.front_default}
             alt="pokemon-picture"
+            className="pokemon-picture"
           />
           <div className="background"></div>
         </Link>
