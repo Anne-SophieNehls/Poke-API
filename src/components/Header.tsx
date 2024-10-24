@@ -7,20 +7,31 @@ export default function Header() {
 
   return (
     <header>
-      <div>
-        <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Logo-Pokemon" />
-      </div>
-      <div>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/type">Types</NavLink>
-          <NavLink to="/about-us">About us</NavLink>
+      <section className="p-menu1">
+        <nav id="navbar" className="navigation" role="navigation">
+          <input id="toggle1" type="checkbox" />
+          <label className="hamburger1" htmlFor="toggle1">
+            <div className="top"></div>
+            <div className="meat"></div>
+            <div className="bottom"></div>
+          </label>
+          <nav className="menu1">
+            <NavLink className="link1" to="/">
+              Home
+            </NavLink>
+            <NavLink className="link1" to="/type">
+              Types
+            </NavLink>
+            <NavLink className="link1" to="/about-us">
+              About us
+            </NavLink>
+          </nav>
         </nav>
-        <form>
-          <input type="text" placeholder="Search Pokemon" ref={searchRef} />
-        </form>
-        <ThemeSwitcher />
-      </div>
+      </section>
+      <form>
+        <input type="text" placeholder="Search Pokemon" ref={searchRef} />
+      </form>
+      <ThemeSwitcher />
     </header>
   );
 }
