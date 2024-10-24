@@ -9,6 +9,7 @@ export default function Header() {
     <header>
       <div>
         <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Logo-Pokemon" />
+        <h1>Gotta Fetch 'Em All</h1>
       </div>
       <div>
         <nav>
