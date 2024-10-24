@@ -17,8 +17,8 @@
 /* !    import colors    ! */    
 /* müssen wir nicht verwenden, aber lies sich einfach generieren und haben ist besser als brauchen, wenn wir das doch so wie in der vorlage machen wollen */
 :root {
-  --color-background: #ccdadd;
-  --color-background-dark: #2a3964;
+  --color-BG-light: #ccdadd;
+  --color-BG-dark: #2a3964;
   --color-black: #000000;
   --color-white: #ffffff;
   --color-gray-light: #ebebeb;
@@ -67,9 +67,13 @@ html, body, #root{
 }
 
 .theme{
-  background-color: var(--color-background);
+ background-color: var(--color-BG-light);
   padding: 2rem;
-
+  height: 100%;
+}
+.theme.theme--dark{
+  background-color: var(--color-BG-dark) ;
+  color: rgb(255, 255, 255);
 }
 
 a{
