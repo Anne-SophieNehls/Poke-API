@@ -1,12 +1,7 @@
-import { Link } from "react-router-dom";
-
-const PokemonCard = ({ id }: { id: number }) => (
-  <div>
-    <Link to={`/pokemon/${id}`}>
-      <h3>#{id}</h3>
-    </Link>
-  </div>
-);
+import PokeCard from "../components/PokeCard";
+import { getPokemonDetails } from "../lib/api";
+import { useEffect, useState } from "react";
+import { Pokemon } from "../lib/Interfaces";
 
 // mit Array(number) koennen wir einen Array mit einer bestimmten laenge erzeugen:
 // const array151 = Array(151)
@@ -23,20 +18,31 @@ const PokemonCard = ({ id }: { id: number }) => (
 // (hier sind alle Eintraege undefined)
 // Erst dann koennen wir mappen.
 
-const emptyPokemonArray = Array(151).fill(1);
-// const emptyPokemonArray = await Promise.all((151).fill(1).map(()=>(/* hier fetchen */)));
+export default function Homepage() {
+  const [data, setData] = useState<Pokemon[]>([]);
 
-const Homepage = () => (
-  <div>
-    <h1>Pokemon</h1>
+  const setPokemonData = async () => {
+    const pokemonArray: Pokemon[] = [];
+    while (pokemonArray.length < 120) {
+      pokemonArray.push(await getPokemonDetails(pokemonArray.length + 1));
+    }
+    setData(pokemonArray);
+  };
+
+  useEffect(() => {
+    setPokemonData(), [];
+  });
+
+  return (
     <div>
-      {emptyPokemonArray.map((_id, index) => (
-        // da alle eintraege des Arrays 1 sind, verwenden wir den index um hochzuzaehlen.
-        // da der index bei 0 anfaengt, addieren wir jeweils 1
-        <PokemonCard key={index} id={index + 1} />
-      ))}
+      <h1>Pokemon</h1>
+      <div>
+        {data.map((pokemon: Pokemon) => (
+          // da alle eintraege des Arrays 1 sind, verwenden wir den index um hochzuzaehlen.
+          // da der index bei 0 anfaengt, addieren wir jeweils 1
+          <PokeCard pokemon={pokemon} />
+        ))}
+      </div>
     </div>
-  </div>
-);
-
-export default Homepage;
+  );
+}
