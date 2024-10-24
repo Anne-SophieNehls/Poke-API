@@ -14,6 +14,17 @@
   font-weight: 900;
 }
 
+@font-face {
+  font-family: Pokemon;
+  src: url(/src/style/font/pokemon-solid-font/PokemonSolidNormal-xyWR.ttf)
+}
+
+@font-face {
+  font-family: Pokemon-Hollow;
+  src: url(/src/style/font/pokemon-hollow-font/PokemonHollowNormal-pyPZ.ttf)
+}
+
+
 /* !    import colors    ! */    
 /* müssen wir nicht verwenden, aber lies sich einfach generieren und haben ist besser als brauchen, wenn wir das doch so wie in der vorlage machen wollen */
 :root {
@@ -84,6 +95,13 @@ button{
   background-color: #b3b3b331;
 }
 
+/* #######   Header   ####### */
+
+header h1 {
+  font-family: Pokemon-Hollow;
+  font-size: 2rem;
+
+}
 
 /* #######   Allgemeine Home   ####### */
 
