@@ -17,7 +17,7 @@ export default function PokeCard(props: { pokemon: Pokemon }) {
         </Link>
       </div>
       <div className="info">
-        <p>{props.pokemon.id}</p>
+        <p>#{props.pokemon.id.toString().padStart(4, "0")}</p>
         <p>{props.pokemon.name}</p>
       </div>
     </div>

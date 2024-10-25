@@ -32,11 +32,13 @@ export default function DetailPage() {
       />
       </div>
       <h1>
-        #{id?.toString().padStart(4, "0")} {pokemonData.name}
+        #{pokemonData.id?.toString().padStart(4, "0")} {pokemonData.name}
       </h1>
-      <div className="types">
+      <div className="type-buttons">
         {pokemonData.types.map((type) => (
-          <button>{type.type.name}</button>
+          <button className={`poke-button ${type.type.name}`}>
+            {type.type.name.toUpperCase()}
+          </button>
         ))}
       </div>
       <h3>ATTACKS AND MOVEMENTS</h3>
