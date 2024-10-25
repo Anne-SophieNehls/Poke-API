@@ -5,7 +5,6 @@ import PokeCard from "../components/PokeCard";
 
 const TypePage = () => {
   const [data, setData] = useState<Pokemon[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   const types = [
     "bug",
@@ -54,10 +53,14 @@ const TypePage = () => {
   return (
     <div>
       <h1>Choose your Pokémon Type!</h1>
-      <div>
+      <div className="type-buttons">
         {types.map((type) => (
-          <button key={type} onClick={() => chooseByType(type)}>
-            {type}
+          <button
+            className={`poke-button ${type}`}
+            key={type}
+            onClick={() => chooseByType(type)}
+          >
+            {type.toUpperCase()}
           </button>
         ))}
       </div>

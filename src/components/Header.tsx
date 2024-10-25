@@ -1,17 +1,26 @@
 import { useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Header() {
   const searchRef = useRef<HTMLInputElement>(null);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!searchRef.current) return;
+
+    const id = searchRef.current.value;
+    location.href = `/pokemon/${id}`;
+  };
   return (
     <header>
       <div className="logo-container">
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
-          alt="Logo-Pokemon"
-        />
+        <Link to="/">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+            alt="Logo-Pokemon"
+          />
+        </Link>
         <h1>Gotta Fetch 'Em All</h1>
       </div>
       <div className="elemtene-header">
@@ -36,7 +45,7 @@ export default function Header() {
             </nav>
           </nav>
         </section>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             className="search-input"

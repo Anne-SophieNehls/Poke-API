@@ -9,28 +9,27 @@
 /* !    import fonts    ! */
 
 @font-face {
-  font-family: 'Inter';
-  src: url('./font/Inter-VariableFont_opsz\,wght.ttf');
+  font-family: "Inter";
+  src: url("./font/Inter-VariableFont_opsz\,wght.ttf");
 }
 
 @font-face {
-  font-family: 'Roboto-Black';
-  src: url('./fonts/Roboto-Black.ttf');
+  font-family: "Roboto-Black";
+  src: url("./fonts/Roboto-Black.ttf");
   font-weight: 900;
 }
 
 @font-face {
   font-family: Pokemon;
-  src: url(/src/style/font/pokemon-solid-font/PokemonSolidNormal-xyWR.ttf)
+  src: url(/src/style/font/pokemon-solid-font/PokemonSolidNormal-xyWR.ttf);
 }
 
 @font-face {
   font-family: Pokemon-Hollow;
-  src: url(/src/style/font/pokemon-hollow-font/PokemonHollowNormal-pyPZ.ttf)
+  src: url(/src/style/font/pokemon-hollow-font/PokemonHollowNormal-pyPZ.ttf);
 }
 
-
-/* !    import colors    ! */    
+/* !    import colors    ! */
 /* müssen wir nicht verwenden, aber lies sich einfach generieren und haben ist besser als brauchen, wenn wir das doch so wie in der vorlage machen wollen */
 :root {
   --color-BG-light: #ccdadd;
@@ -64,44 +63,113 @@
 
 /* #######   Allgemeine Styles   ####### */
 :root {
-  font-family: 'Inter';
+  font-family: "Inter";
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body, #root{
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   scroll-behavior: smooth;
   font-family: Inter;
 }
 
-.theme{
- background-color: var(--color-BG-light);
+.theme {
+  background-color: var(--color-BG-light);
   padding: 1rem;
   min-height: 100%;
 }
-.theme.theme--dark{
-  background-color: var(--color-BG-dark) ;
+.theme.theme--dark {
+  background-color: var(--color-BG-dark);
   color: rgb(255, 255, 255);
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--color-black);
 }
 
-button{
+button {
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
   background-color: #b3b3b300;
 }
 
+.type-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.poke-button {
+  border: 1px solid black;
+  width: 98px;
+  color: white;
+}
+.bug {
+  background-color: var(--color-bug);
+}
+.dark {
+  background-color: var(--color-dark);
+}
+.dragon {
+  background-color: var(--color-dragon);
+}
+.electric {
+  background-color: var(--color-electric);
+}
+.fairy {
+  background-color: var(--color-fairy);
+}
+.fighting {
+  background-color: var(--color-fighting);
+}
+.fire {
+  background-color: var(--color-fire);
+}
+.flying {
+  background-color: var(--color-flying);
+}
+.ghost {
+  background-color: var(--color-ghost);
+}
+.grass {
+  background-color: var(--color-grass);
+}
+.ground {
+  background-color: var(--color-ground);
+}
+.ice {
+  background-color: var(--color-ice);
+}
+.normal {
+  background-color: var(--color-normal);
+}
+.shadow {
+  background-color: var(--color-shadow);
+}
+.poison {
+  background-color: var(--color-poison);
+}
+.psychic {
+  background-color: var(--color-psychic);
+}
+.rock {
+  background-color: var(--color-rock);
+}
+.steel {
+  background-color: var(--color-steel);
+}
+.water {
+  background-color: var(--color-water);
+}
