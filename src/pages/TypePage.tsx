@@ -39,7 +39,6 @@ const TypePage = () => {
     );
     console.log(pokemonArray);
     setData(pokemonArray);
-    return json;
   };
 
   // if (error) {

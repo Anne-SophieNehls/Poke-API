@@ -7,6 +7,11 @@ import { Pokemon } from "../lib/Interfaces";
 export default function DetailPage() {
   const { id } = useParams();
 
+  const gotoTypePage = (e: Event) => {
+    e.preventDefault();
+    location.href = `/type`;
+  };
+
   const pokemonQuery = useQuery<Pokemon>({
     queryKey: ["pokemon", id],
 
@@ -36,9 +41,14 @@ export default function DetailPage() {
       </h1>
       <div className="type-buttons">
         {pokemonData.types.map((type) => (
-          <button className={`poke-button ${type.type.name}`}>
-            {type.type.name.toUpperCase()}
-          </button>
+          <>
+            <button
+              className={`poke-button ${type.type.name}`}
+              onClick={() => gotoTypePage}
+            >
+              {type.type.name.toUpperCase()}
+            </button>
+          </>
         ))}
       </div>
       <h3>ATTACKS AND MOVEMENTS</h3>
