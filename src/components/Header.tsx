@@ -7,13 +7,13 @@ export default function Header() {
 
   return (
     <header>
-      <div className="logo-container">
+       <NavLink to="/" className="logo-container">
         <img
           src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
           alt="Logo-Pokemon"
         />
         <h1>Gotta Fetch 'Em All</h1>
-      </div>
+        </NavLink>
       <div className="elemtene-header">
         <section className="p-menu1">
           <nav id="navbar" className="navigation" role="navigation">

@@ -24,10 +24,13 @@ export default function DetailPage() {
   const pokemonData = pokemonQuery.data;
   return (
     <div className="rainbow-border">
+      <div className="background">
       <img
         src={pokemonData.sprites.other?.home.front_default}
-        alt={pokemonData.name}
+        alt={pokemonData.name} className="pokemon-picture"
+          
       />
+      </div>
       <h1>
         #{id?.toString().padStart(4, "0")} {pokemonData.name}
       </h1>

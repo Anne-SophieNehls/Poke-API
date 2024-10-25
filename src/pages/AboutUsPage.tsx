@@ -1,5 +1,6 @@
 export default function AboutUsPage() {
   return (
+    <div className="rainbow-border">
     <section>
       <h2>About us</h2>
       <div className="line"></div>
@@ -66,6 +67,9 @@ export default function AboutUsPage() {
           </a>
         </article>
       </div>
+      
     </section>
+    </div>
+
   );
 }
