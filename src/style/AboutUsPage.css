@@ -1,8 +1,6 @@
 /* #######   Allgemeine About us   ####### */
 
 
-
-
 section {
   display: flex;
   flex-direction: column;
@@ -15,6 +13,8 @@ section h2 {
   color: var(--color-electric);
   font-size: 2rem;
   text-shadow: 3px 4px 2px var(--color-poke-blue);
+letter-spacing: 0.4rem;
+
 }
 
 section p {
@@ -52,6 +52,8 @@ section p {
   color: var(--color-electric);
   font-size: 1.5rem;
   text-shadow: 3px 4px 2px var(--color-poke-blue);
+letter-spacing: 0.25rem;
+
 }
 
 .Personen h4 {

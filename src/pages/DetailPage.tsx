@@ -25,13 +25,13 @@ export default function DetailPage() {
   return (
     <div className="rainbow-border">
       <div className="background">
-      <img
-        src={pokemonData.sprites.other?.home.front_default}
-        alt={pokemonData.name} className="pokemon-picture"
-          
-      />
+        <img
+          src={pokemonData.sprites.other?.home.front_default}
+          alt={pokemonData.name}
+          className="pokemon-picture scale-up-bl"
+        />
       </div>
-      <h1>
+      <h1 className="poke-name">
         #{pokemonData.id?.toString().padStart(4, "0")} {pokemonData.name}
       </h1>
       <div className="type-buttons">
