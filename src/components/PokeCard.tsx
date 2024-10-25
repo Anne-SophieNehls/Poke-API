@@ -6,12 +6,14 @@ export default function PokeCard(props: { pokemon: Pokemon }) {
     <div className="pokeCard">
       <div>
         <Link to={`/pokemon/${props.pokemon.id}`}>
-          <img
-            src={props.pokemon.sprites.other?.home.front_default}
-            alt="pokemon-picture"
-            className="pokemon-picture"
-          />
-          <div className="background"></div>
+          <div className="background">
+            {" "}
+            <img
+              src={props.pokemon.sprites.other?.home.front_default}
+              alt="pokemon-picture"
+              className="pokemon-picture"
+            />
+          </div>
         </Link>
       </div>
       <div className="info">
