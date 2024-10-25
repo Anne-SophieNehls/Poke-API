@@ -61,9 +61,11 @@ const TypePage = () => {
           </button>
         ))}
       </div>
-      {data?.map((pokemon) => (
-        <PokeCard pokemon={pokemon} />
-      ))}
+      <div className="home-output">
+        {data?.map((pokemon) => (
+          <PokeCard pokemon={pokemon} />
+        ))}
+      </div>
     </div>
   );
 };

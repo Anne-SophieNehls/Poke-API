@@ -8,14 +8,14 @@
 
 @media only screen and (max-width: 1024px) { 
     .home-output{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
 }
 
 @media only screen and (max-width: 768px) { 
     .home-output{
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 }
@@ -37,16 +37,32 @@
 .background{
     background-color: #ffcb03;
     height: 50%;
-    margin-top: 170px;
+    margin-top: 40%;
     border-radius: 15px 15px 0px 0px; 
+}
+
+.theme--dark .background{
+    background: rgb(32,29,66);
+    background: linear-gradient(0deg, rgba(32,29,66,1) 0%, rgba(78,105,196,1) 100%);
+
 }
 
 .info{
     display: flex;
     justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 700;
 
  background-color: white;
  padding: 10px;
  padding-left: 20px;
  border-radius: 0px 0px 15px 15px;
+}
+
+.info p{
+    padding: 5px;
+}
+
+.theme--dark .info{
+    background-color:#02173F;
 }

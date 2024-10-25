@@ -49,6 +49,10 @@ section h2 {
   .Personen h4 {
     font-size: 1rem;
   }
+
+  .theme--dark .Personen h4{
+    color: black;
+  }
   
   .person-image {
     width: 100px; 
@@ -61,4 +65,9 @@ section h2 {
     height: 4px; 
     background: linear-gradient(to right, var(--color-poke-blue), var(--color-electric)); 
     margin: 1rem 0; 
+  }
+
+  .theme--dark .Personen  p{
+    color: black;
+
   }

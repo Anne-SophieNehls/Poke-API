@@ -14,11 +14,6 @@
   flex-direction: column;
 }
 
-.logo-container h1{
-  margin: 10px;
-  font-size: 1.8rem;
-}
-
 .logo-container img{
   min-width: 300px;
   max-width: 650px;
@@ -39,127 +34,85 @@
 }
 
 .L-D-Mode{
-    width: 35px;
-  }
-
-
-/* **********   Mobil Styles   ********** */
-@media only screen and (max-width: 768px) { 
-
-  .search-input{
-    border: none;
-    border-radius: 10px;
-    padding: 5px;
-    margin-top: 5px;
-    font-size: 1rem;
-  }
-
-/* #######   Burgermenue   ####### */
-
-.p-menu1{
-     height: 100%;
-}
-
-  /* Hamburger */
-  .hamburger1 {
-    height: 45px;
-    margin-right: 10px;
-    /* display: grid; */
-    grid-template-rows: repeat(3, 1fr);
-    justify-items: center;
-    z-index: 120;
-  }
-  
-  .hamburger1 div {
-    background-color: #02173F;
-    position: relative;
+  margin-top: 4px;
     width: 40px;
-    height: 5px;
-    margin-bottom: 7px;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    border-radius: 5px;
   }
-  .theme--dark .hamburger1 div{
-    background-color: rgb(255, 255, 255);
-  }
-  
-  #toggle1 {
-    display: none;
-  }
-  
-  #toggle1:checked + .hamburger1 .top {
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-    margin-top: 4.5px;
-  }
-  
-  #toggle1:checked + .hamburger1 .meat {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    margin-top: -10px
-  }
-  
-  #toggle1:checked + .hamburger1 .bottom {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  
-  #toggle1:checked ~ .menu1 {
-    height: 340px;
-  }
-  
-  /* Menu ausgeklappt */
-  .menu1 {
-    width: 100svw;
-    height: 100svh;
-    background-color: #02173F;
-    margin: 0;
-    display: -ms-grid;
-    display: grid;
-    grid-template-rows: 1fr repeat(4, 0.5fr);
-    grid-row-gap: 25px;
-    padding: 0;
-    list-style: none;
-    clear: both;
-    width: auto;
-    text-align: center;
-    height: 0px;
-    overflow: hidden;
-    transition: height .4s ease;
-    z-index: 120;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-  }
-  
-  .menu1 a:first-child {
-    margin-top: 40px;
-  }
-  
-  .menu1 a:last-child {
-    margin-bottom: 10px;
-  }
-  
-  .link1 {
-    width: 100%;
-    margin: 0;
-    padding: 10px 0px;
-    font-weight: 700 ;
-    font-size: 1.2rem ;
-    color: #ccdadd;
-  }
-  
-  .link1:hover {
-    background-color: #ccdadd;
-    color: #02173F;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-  }
+
+  /* **********  Web Nav und co   ********** */
+
+  header{
+  display: flex;
+  align-items: center;
 }
 
+.logo-container{
+  margin-right: 15%;
+}
 
-/* **********   Tablet Styles   ********** */
+.logo-container h1{
+  margin: 10px;
+  font-size: 1.8rem;
+  width: 120%;
+  margin-left: 30%;
+}
+
+.elemtene-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navigation input{
+  display: none;
+}
+
+.search-input{
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 5px 40px;
+  font-size: 1rem;
+  width: 100%;
+  
+}
+
+.menu1{
+  display: flex;
+  padding: 15px 30px;
+  background-color: #2a3964;
+  border-radius: 10px;
+}
+
+.theme--dark .menu1{
+  background-color: #02173F;
+}
+
+.menu1 a{
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+  width: 9svw;
+  text-align: center;
+}
+
+.elemtene-header button{
+  margin: 0px 50px;
+}
+
+/* **********   Mobil & Tablet Style   ********** */
 @media only screen and (max-width: 1024px) { 
+
+  header{
+    display: inline;
+  }
+  .logo-container h1{
+    margin: 10px;
+    font-size: 1.8rem;
+    width: 100svw;
+    text-align: center;
+    margin-left: 0%;
+  }
 
   .search-input{
     border: none;
@@ -167,7 +120,8 @@
     padding: 15px;
     margin-top: 5px;
     font-size: 1.5rem;
-    width: 70svw;
+    min-width: 65svw;
+    max-width: 90svw;
   }
   
   /* #######   Burgermenue   ####### */
