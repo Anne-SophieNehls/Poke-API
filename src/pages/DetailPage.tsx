@@ -4,15 +4,6 @@ import { getPokemonDetails } from "../lib/api";
 import PlaySound from "../components/PlaySound";
 import { Pokemon } from "../lib/Interfaces";
 
-/* 
-interface PokemonData {
-  name: string;
-  cries: {
-    latest: string;
-  };
-}
- */
-
 export default function DetailPage() {
   const { id } = useParams();
 
@@ -32,7 +23,7 @@ export default function DetailPage() {
 
   const pokemonData = pokemonQuery.data;
   return (
-    <div>
+    <div className="rainbow-border">
       <img
         src={pokemonData.sprites.other?.home.front_default}
         alt={pokemonData.name}
@@ -46,6 +37,11 @@ export default function DetailPage() {
         ))}
       </div>
       <h3>ATTACKS AND MOVEMENTS</h3>
+      <div className="moves">
+        {pokemonData.moves.map((move) => (
+          <button>{move.move.name}</button>
+        ))}
+      </div>
 
       <PlaySound audioURL={pokemonData.cries.latest} />
     </div>
