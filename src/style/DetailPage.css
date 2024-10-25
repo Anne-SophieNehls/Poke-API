@@ -1,1 +1,38 @@
 /* #######    Detailpage   ####### */
+
+
+.rainbow-border {
+    padding: 16px;
+    border-radius: 200px;
+    border: 12px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      90deg,
+      rgba(8, 8, 103, 0.411),
+      yellow,
+      blue
+    ); 
+    animation: rainbow-border 5s linear infinite;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    margin: 0 20rem; 
+}
+  
+@keyframes rainbow-border {
+    0% {
+      border-image-source: linear-gradient(90deg, rgba(8, 8, 103, 0.411),
+      yellow,
+      blue
+      ); 
+    }
+    100% {
+      border-image-source: linear-gradient(270deg, rgba(8, 8, 103, 0.411),
+      yellow,
+      blue
+      ); 
+    }
+}
