@@ -6,6 +6,7 @@ export interface Pokemon {
   height: number;
   id: number;
   location_area_encounters: string;
+  moves: Mfe[];
   name: string;
   order: number;
   sprites: Sprites;
@@ -62,4 +63,12 @@ export interface Home {
   front_female: null;
   front_shiny: string;
   front_shiny_female: null;
+}
+
+export interface Mfe {
+  move: Move;
+}
+export interface Move {
+  name: string;
+  url: string;
 }
