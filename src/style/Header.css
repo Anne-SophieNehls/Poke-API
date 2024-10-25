@@ -1,17 +1,18 @@
 @font-face {
   font-family: "Pokemon-font";
-  src: url('./font/pokemon-hollow-font/PokemonHollowNormal-pyPZ.ttf');
+  src: url('./font/pokemon-solid-font/PokemonSolidNormal-xyWR.ttf');
 }
 /* #######   Allgemeine Styles   ####### */
 .logo-container{
   font-family: "Pokemon-font";
-  color: #4356cf;
+  color: var(--color-electric);
   font-weight: 900;
-  text-shadow: 0px 0px 5px #f3df07;
+  text-shadow: 2px 1px 3px var(--color-poke-blue);;
   justify-content:  center;
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-left: 5%;
 }
 
 .logo-container img{
@@ -58,13 +59,22 @@
 }
 
 .elemtene-header{
+  width: 90%;
   display: grid;
-  grid-template-areas: "nav nav nav nav nav"
-    "search search search search LDButton";
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  margin: 25px;
 }
 
 .navigation input{
   display: none;
+}
+
+.elemtene-header form{
+  grid-column: 1 / 6;
+  grid-row: 2/3;
+
 }
 
 .search-input{
@@ -73,8 +83,7 @@
   padding: 15px;
   margin: 5px ;
   font-size: 1rem;
-  width: 300px;
-  grid-area: search;
+  width: 100%;
 }
 
 .menu1{
@@ -82,7 +91,12 @@
   padding: 15px 30px;
   background-color: #2a3964;
   border-radius: 10px;
-  grid-area: nav;
+  width: 100%;
+}
+
+.p-menu1{
+  grid-column: 1 / 5;
+  grid-row: 1/2;
 }
 
 .theme--dark .menu1{
@@ -99,7 +113,8 @@
 
 .elemtene-header button{
   margin: 0px 1rem;
-  grid-area: LDButton;
+  grid-column: 5 / 6;
+  grid-row: 1/2;
 }
 
 /* **********   Mobil & Tablet Style   ********** */
@@ -128,6 +143,8 @@
 
   .elemtene-header{
     flex-wrap: nowrap;
+ 
+      display: flex;
   }
   
   /* #######   Burgermenue   ####### */
@@ -182,19 +199,20 @@
     }
     
     #toggle1:checked ~ .menu1 {
-      height: 340px;
+      height: 60svh;
+      width: 85svw;
+      margin-right: 15svw;
     }
     
     /* Menu ausgeklappt */
     .menu1 {
-      width: 100%;
-      height: 100%;
       background-color: #02173F;
       margin: 0;
-      display: -ms-grid;
-      display: grid;
-      grid-template-rows: 1fr repeat(4, 0.5fr);
-      grid-row-gap: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5%;
+      
       padding: 0;
       list-style: none;
       clear: both;
@@ -217,16 +235,14 @@
     }
     
     .link1 {
-      width: 100%;
-      margin: 0;
-      padding: 10px 0px;
+      padding: 20px;
       font-weight: 700 ;
-      font-size: 1.2rem ;
-      color: #ccdadd;
     }
     
     .link1:hover {
+      padding: 20px 40svw;
       background-color: #ccdadd;
+      border-radius: 10px;
       color: #02173F;
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease;

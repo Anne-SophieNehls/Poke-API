@@ -82,6 +82,7 @@ body,
   margin: 0;
   scroll-behavior: smooth;
   font-family: Inter;
+  overflow-x: hidden;
 }
 
 .theme {
@@ -104,74 +105,4 @@ button {
   padding: 10px 15px;
   border-radius: 5px;
   background-color: #b3b3b300;
-}
-
-.moves,
-.type-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.move-button,
-.poke-button {
-  border: 1px solid black;
-  width: 98px;
-  color: white;
-}
-.bug {
-  background-color: var(--color-bug);
-}
-.dark {
-  background-color: var(--color-dark);
-}
-.dragon {
-  background-color: var(--color-dragon);
-}
-.electric {
-  background-color: var(--color-electric);
-}
-.fairy {
-  background-color: var(--color-fairy);
-}
-.fighting {
-  background-color: var(--color-fighting);
-}
-.fire {
-  background-color: var(--color-fire);
-}
-.flying {
-  background-color: var(--color-flying);
-}
-.ghost {
-  background-color: var(--color-ghost);
-}
-.grass {
-  background-color: var(--color-grass);
-}
-.ground {
-  background-color: var(--color-ground);
-}
-.ice {
-  background-color: var(--color-ice);
-}
-.normal {
-  background-color: var(--color-normal);
-}
-.shadow {
-  background-color: var(--color-shadow);
-}
-.poison {
-  background-color: var(--color-poison);
-}
-.psychic {
-  background-color: var(--color-psychic);
-}
-.rock {
-  background-color: var(--color-rock);
-}
-.steel {
-  background-color: var(--color-steel);
-}
-.water {
-  background-color: var(--color-water);
 }

@@ -33,10 +33,10 @@ export default function DetailPage() {
         <img
           src={pokemonData.sprites.other?.home.front_default}
           alt={pokemonData.name}
-          className="pokemon-picture"
+          className="pokemon-picture scale-up-bl"
         />
       </div>
-      <h1>
+      <h1 className="poke-name">
         #{pokemonData.id?.toString().padStart(4, "0")} {pokemonData.name}
       </h1>
       <div className="type-buttons">

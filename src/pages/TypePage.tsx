@@ -51,7 +51,7 @@ const TypePage = () => {
 
   return (
     <div>
-      <h1>Choose your Pokémon Type!</h1>
+      <h2 className="chooseTypeH2">Choose your Pokémon Type!</h2>
       <div className="type-buttons">
         {types.map((type) => (
           <button
