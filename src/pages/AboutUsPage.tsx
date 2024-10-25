@@ -23,6 +23,7 @@ export default function AboutUsPage() {
         <article className="card Personen">
           <img className="person-image" src="public/team-pictures/christian.png" alt="Christian" />
           <h3>Christian</h3>
+          <p>“Hello, I’m Christian from Dresden. I'm a software developer with 10 years of experience. I enjoy discovering new technologies and using them in different projects.”
           <h4>Contact:</h4>
           <a href="https://github.com/ChrstianH">Github</a>
         </article>
