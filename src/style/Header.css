@@ -41,6 +41,7 @@
   /* **********  Web Nav und co   ********** */
 
   header{
+    padding-top: 20px;
   display: flex;
   align-items: center;
 }
@@ -57,10 +58,9 @@
 }
 
 .elemtene-header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-areas: "nav nav nav nav nav"
+    "search search search search LDButton";
 }
 
 .navigation input{
@@ -71,10 +71,10 @@
   border: none;
   border-radius: 10px;
   padding: 15px;
-  margin: 5px 40px;
+  margin: 5px ;
   font-size: 1rem;
-  width: 100%;
-  
+  width: 300px;
+  grid-area: search;
 }
 
 .menu1{
@@ -82,6 +82,7 @@
   padding: 15px 30px;
   background-color: #2a3964;
   border-radius: 10px;
+  grid-area: nav;
 }
 
 .theme--dark .menu1{
@@ -97,7 +98,8 @@
 }
 
 .elemtene-header button{
-  margin: 0px 50px;
+  margin: 0px 1rem;
+  grid-area: LDButton;
 }
 
 /* **********   Mobil & Tablet Style   ********** */
@@ -122,6 +124,10 @@
     font-size: 1.5rem;
     min-width: 65svw;
     max-width: 90svw;
+  }
+
+  .elemtene-header{
+    flex-wrap: nowrap;
   }
   
   /* #######   Burgermenue   ####### */
