@@ -25,11 +25,11 @@ export default function DetailPage() {
   return (
     <div className="rainbow-border">
       <div className="background">
-      <img
-        src={pokemonData.sprites.other?.home.front_default}
-        alt={pokemonData.name} className="pokemon-picture"
-          
-      />
+        <img
+          src={pokemonData.sprites.other?.home.front_default}
+          alt={pokemonData.name}
+          className="pokemon-picture"
+        />
       </div>
       <h1>
         #{pokemonData.id?.toString().padStart(4, "0")} {pokemonData.name}
@@ -44,7 +44,7 @@ export default function DetailPage() {
       <h3>ATTACKS AND MOVEMENTS</h3>
       <div className="moves">
         {pokemonData.moves.map((move) => (
-          <button>{move.move.name}</button>
+          <button className="move-button">{move.move.name}</button>
         ))}
       </div>
 
