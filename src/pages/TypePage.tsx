@@ -53,6 +53,7 @@ const TypePage = () => {
 
   return (
     <div>
+       <div className="border">
       <h1>Choose your Pokémon Type!</h1>
       <div>
         {types.map((type) => (
@@ -64,6 +65,7 @@ const TypePage = () => {
       {data?.map((pokemon) => (
         <PokeCard pokemon={pokemon} />
       ))}
+    </div>
     </div>
   );
 };

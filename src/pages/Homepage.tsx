@@ -19,10 +19,12 @@ export default function Homepage() {
   });
 
   return (
+    <div className="border">
     <div className="home-output">
       {data.map((pokemon: Pokemon) => (
         <PokeCard pokemon={pokemon} />
       ))}
+    </div>
     </div>
   );
 }
