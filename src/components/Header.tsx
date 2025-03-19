@@ -16,7 +16,7 @@ export default function Header() {
     <header>
       <NavLink to="/" className="logo-container">
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+          src="/pokeapi-logo.png"
           alt="Logo-Pokemon"
         />
         <h1>Gotta Fetch 'Em All</h1>

@@ -5,23 +5,35 @@ import { Pokemon } from "../lib/Interfaces";
 
 export default function Homepage() {
   const [data, setData] = useState<Pokemon[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const setPokemonData = async () => {
-    const pokemonArray: Pokemon[] = [];
-    while (pokemonArray.length < 120) {
-      pokemonArray.push(await getPokemonDetails(pokemonArray.length + 1));
+    try {
+      setIsLoading(true);
+      const pokemonArray: Pokemon[] = [];
+      for (let i = 1; i <= 20; i++) {
+        pokemonArray.push(await getPokemonDetails(i));
+      }
+      setData(pokemonArray);
+    } catch (error) {
+      console.error("Error fetching Pokemon:", error);
+    } finally {
+      setIsLoading(false);
     }
-    setData(pokemonArray);
   };
 
   useEffect(() => {
-    setPokemonData(), [];
-  });
+    setPokemonData();
+  }, []); // Fixed dependency array
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="home-output">
       {data.map((pokemon: Pokemon) => (
-        <PokeCard pokemon={pokemon} />
+        <PokeCard key={pokemon.id} pokemon={pokemon} />
       ))}
     </div>
   );

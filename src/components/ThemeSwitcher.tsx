@@ -7,13 +7,13 @@ export default function ThemeSwitcher() {
     <button onClick={toggleTheme}>
       {theme === "light" ? (
         <img
-          src="../../public/Pokeball-dark.svg"
+          src="/Pokeball-dark.svg"
           alt="darkmode"
           className="L-D-Mode"
         />
       ) : (
         <img
-          src="../../public/Pokeball-light.svg"
+          src="/Pokeball-light.svg"
           alt="lightmode"
           className="L-D-Mode"
         />
