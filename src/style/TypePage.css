@@ -82,3 +82,36 @@ letter-spacing: 0.5rem;
     background-color: var(--color-water);
   }
   
+  .poke-button {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .poke-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .poke-button:active {
+    transform: scale(0.95);
+  }
+
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--color-poke-blue);
+  border-top: 5px solid var(--color-electric);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container {
+  text-align: center;
+  padding: 2rem;
+}

@@ -5,6 +5,7 @@ import PokeCard from "../components/PokeCard";
 
 const TypePage = () => {
   const [data, setData] = useState<Pokemon[] | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const types = [
     "bug",
@@ -29,25 +30,23 @@ const TypePage = () => {
   ];
 
   const chooseByType = async (type: string) => {
-    const pokemonUrl = `https://pokeapi.co/api/v2/type/${type}`;
-    const response = await fetch(pokemonUrl);
-    const json = await response.json();
-    const pokemonArray = await Promise.all(
-      json.pokemon.map((pokemonItem: any) => {
-        return getPokemonDetails(pokemonItem.pokemon.name);
-      })
-    );
-    console.log(pokemonArray);
-    setData(pokemonArray);
+    setIsLoading(true);
+    try {
+      const pokemonUrl = `https://pokeapi.co/api/v2/type/${type}`;
+      const response = await fetch(pokemonUrl);
+      const json = await response.json();
+      const pokemonArray = await Promise.all(
+        json.pokemon.map((pokemonItem: any) => {
+          return getPokemonDetails(pokemonItem.pokemon.name);
+        })
+      );
+      setData(pokemonArray);
+    } catch (error) {
+      console.error("Error fetching Pokemon:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
-
-  // if (error) {
-  //     return <div>Error, reload the website</div>;
-  // }
-
-  // if (!data) {
-  //     return <div>Loading...</div>;
-  // }
 
   return (
     <div>
@@ -63,11 +62,18 @@ const TypePage = () => {
           </button>
         ))}
       </div>
-      <div className="home-output">
-        {data?.map((pokemon) => (
-          <PokeCard pokemon={pokemon} />
-        ))}
-      </div>
+      {isLoading ? (
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Loading Pokémon...</p>
+        </div>
+      ) : (
+        <div className="home-output">
+          {data?.map((pokemon) => (
+            <PokeCard key={pokemon.id} pokemon={pokemon} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
